@@ -1,3 +1,5 @@
+<app-search (dataEvent)="getChildData($event)"></app-search>
+
 <div *ngFor="let video of videos">
   <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
     <img src="{{video.snippet.thumbnails.medium.url}}" alt="">

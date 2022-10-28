@@ -19,23 +19,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private httpService: HttpService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    // private activatedRoute: ActivatedRoute,
+    // private router: Router
   ) {
-    // for (let i = 0; i < 40; i++) {
-    //   this.preloaderCount.push(i);
-    // }
   }
 
   ngOnInit(): void {
-    // check if there is a search query
-    // this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-    //   if (params['game-search']) {
-    //     this.searchGames('metacrit', params['game-search']);
-    //   } else {
-    //     this.searchGames('metacrit');
-    //   }
-    // })
 
     this.searchVideos("dogs")
   }
@@ -45,6 +34,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.videos = videoList.items;
       console.log(this.videos);
     })
+  }
+
+  // get videos from search
+  getChildData($event: any) {
+    this.videos = $event;
   }
 
   // openGameDetails(id: string): void {

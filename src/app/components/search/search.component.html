@@ -1,1 +1,20 @@
-<p>search works!</p>
+<div class="search-container">
+  <form class="search-form" #form="ngForm" (submit)="onSubmit(search)">
+    <!-- <span class="logo" routerLink="/">VidGameDB</span> -->
+    <div>
+      <input
+      type="text"
+      class="search-input"
+      name="search"
+      placeholder="Search YouTube!"
+      ngModel
+      #search
+      >
+      <button
+        class="search-button"
+      >
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
+</div>
