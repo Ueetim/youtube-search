@@ -8,11 +8,12 @@
 
 :root {
   --gray: #d3d3d3;
+  --blue: #1d5cae;
 }
 
 body {
   padding: 0 10%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   display: flex;
   justify-content: center;
 }

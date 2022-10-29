@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { HttpService } from 'src/app/services/http.service';
@@ -11,6 +11,8 @@ import { APIResponse, Video } from 'src/app/models';
   styleUrls: ['search.component.css']
 })
 export class SearchComponent implements OnInit {
+  @Input() autofocus: string = 'false';
+
   videoSub: any;
 
   videos!: any;
@@ -24,13 +26,19 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(search: any) {
-    search.blur();
-    this.videoSub = this.httpService.getVideoList(search.value).subscribe((videoList: APIResponse<Video>) => {
-      this.videos = videoList.items;
-      this.dataEvent.emit(this.videos);
-      console.log(this.videos);
-    })
+  // onSubmit(search: any) {
+  //   search.blur();
+  //   this.videoSub = this.httpService.getVideoList(search.value).subscribe((videoList: APIResponse<Video>) => {
+  //     this.videos = videoList.items;
+  //     this.dataEvent.emit(this.videos);
+  //     console.log(this.videos);
+  //   })
+  // }
+
+  onSubmit(form: NgForm, search: any) {
+    this.router.navigate(['search', form.value.search]);
+    search.value = "";
   }
+
 
 }

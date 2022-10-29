@@ -19,13 +19,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private httpService: HttpService,
-    // private activatedRoute: ActivatedRoute,
-    // private router: Router
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
   }
 
   ngOnInit(): void {
-
+    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+      if (params['search-term']) {
+        this.searchVideos(params['search-term']);
+      } else {
+        this.searchVideos('dogs');
+      }
+    })
     // this.searchVideos("dogs")
   }
 
