@@ -8,7 +8,8 @@
 
 :root {
   --gray: #d3d3d3;
-  --blue: #1d5cae;
+  /* --blue: #1d5cae; */
+  --blue: #da5e15;
 }
 
 body {
