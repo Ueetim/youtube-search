@@ -1,7 +1,12 @@
-<div class="container">
-  <video class="video-con" muted autoplay loop>
-    <source src="/assets/nature.mp4">
+<div class="container" *ngIf="visible">
+  <video class="video-con" autoplay loop [muted]="'muted'">
+    <source src="/assets/nature.mp4" muted>
   </video>
 
   <app-search></app-search>
+</div>
+
+<!-- preloader -->
+<div class="container preloader" *ngIf="!visible">
+  <div class="loader"></div>
 </div>
