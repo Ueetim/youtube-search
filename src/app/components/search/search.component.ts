@@ -11,7 +11,7 @@ import { APIResponse, Video } from 'src/app/models';
   styleUrls: ['search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Input() autofocus: string = 'false';
+  @Input() bgColor: string = '';
 
   videoSub: any;
 

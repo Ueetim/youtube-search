@@ -1,5 +1,5 @@
 <main>
-  <app-search (dataEvent)="getChildData($event)"></app-search>
+  <app-search (dataEvent)="getChildData($event)" bgColor="#fff"></app-search>
 
   <div *ngFor="let video of videos">
     <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">

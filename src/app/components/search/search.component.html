@@ -1,4 +1,4 @@
-<div class="search-container">
+<div class="search-container" style="background-color: {{bgColor}}">
   <form class="search-form" #form="ngForm" (submit)="onSubmit(form, search)">
     <!-- <span class="logo" routerLink="/">VidGameDB</span> -->
     <div>
@@ -7,7 +7,6 @@
       class="search-input"
       name="search"
       placeholder="Search YouTube!"
-      autofocus={{autofocus}}
       ngModel
       #search
       >
