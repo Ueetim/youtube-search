@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.searchVideos("dogs")
+    // this.searchVideos("dogs")
   }
 
   searchVideos(q: string):void {

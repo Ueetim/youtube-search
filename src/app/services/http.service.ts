@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { forkJoin, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment as env } from 'src/environments/environment.prod';
-// import { APIResponse, Game } from '../models';
+import { APIResponse, Video } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +13,11 @@ export class HttpService {
 
   }
 
-  // getGameList(
-  //   ordering:string,
-  //   search?: string
-  // ): Observable<APIResponse<Game>> {
-  //   let params = new HttpParams().set('ordering', ordering);
+  getVideoList(
+    q: string
+  ): Observable<APIResponse<Video>> {
+    let params = new HttpParams().set('q', q);
 
-  //   if (search) {
-  //     params = new HttpParams().set('ordering', ordering).set('search', search);
-  //   }
-
-  //   return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {params: params});
-  // }
+    return this.http.get<APIResponse<Video>>(`${env.BASE_URL}`, {params: params});
+  }
 }

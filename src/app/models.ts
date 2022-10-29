@@ -1,4 +1,13 @@
 export interface Video {
+  snippet: Snippet;
+  id: Id;
+}
+
+export interface Id {
+  videoId: string;
+}
+
+export interface Snippet {
   publishedAt: string;
   channelId: string;
   title: string;
@@ -26,5 +35,5 @@ export interface Video {
 }
 
 export interface APIResponse<T> {
-  snippets: Array<T>;
+  items: Array<T>;
 }
