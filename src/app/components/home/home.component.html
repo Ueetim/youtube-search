@@ -1,90 +1,31 @@
 <main>
   <app-search (dataEvent)="getChildData($event)" bgColor="#fff"></app-search>
 
-  <div *ngFor="let video of videos">
-    <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
-      <img src="{{video.snippet.thumbnails.medium.url}}" alt="">
-      <p>{{video.snippet.title}}</p>
-      <p>YouTube &rsaquo; {{video.snippet.channelTitle}}</p>
-      <p>{{video.snippet.publishTime | date}}</p>
-    </a>
+  <div class="main-con" *ngIf="videos">
+    <div class="container" *ngFor="let video of videos">
+      <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
+        <div class="img">
+          <img src="{{video.snippet.thumbnails.medium.url}}" alt="">
+        </div>
+        <div class="info">
+          <p class="title">{{video.snippet.title}}</p>
+          <p class="channel-title">YouTube &rsaquo; {{video.snippet.channelTitle}}</p>
+          <p class="date">{{video.snippet.publishTime | date}}</p>
+        </div>
+      </a>
+    </div>
   </div>
 
-  <div class="main-con">
-    <div class="container">
+  <div class="main-con" *ngIf="!videos">
+    <div class="container" *ngFor="let item of preloaderCount">
       <a href="" target="_blank">
-        <div class="img">
-          <img src="/assets/bg.png" alt="">
+        <div class="img" style="background-color: #e8e8e8;">
+          <!-- <img src="/assets/bg.png" alt=""> -->
         </div>
         <div class="info">
-          <p class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio veniam cumque ea pariatur sunt id rerum omnis voluptatum ab.</p>
-          <p class="channel-title">YouTube &rsaquo; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, ipsam.</p>
-          <p class="date">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="container">
-      <a href="" target="_blank">
-        <div class="img">
-          <img src="/assets/bg.png" alt="">
-        </div>
-        <div class="info">
-          <p class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio veniam cumque ea pariatur sunt id rerum omnis voluptatum ab.</p>
-          <p class="channel-title">YouTube &rsaquo; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, ipsam.</p>
-          <p class="date">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="container">
-      <a href="" target="_blank">
-        <div class="img">
-          <img src="/assets/bg.png" alt="">
-        </div>
-        <div class="info">
-          <p class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio veniam cumque ea pariatur sunt id rerum omnis voluptatum ab.</p>
-          <p class="channel-title">YouTube &rsaquo; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, ipsam.</p>
-          <p class="date">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="container">
-      <a href="" target="_blank">
-        <div class="img">
-          <img src="/assets/bg.png" alt="">
-        </div>
-        <div class="info">
-          <p class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio veniam cumque ea pariatur sunt id rerum omnis voluptatum ab.</p>
-          <p class="channel-title">YouTube &rsaquo; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, ipsam.</p>
-          <p class="date">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="container">
-      <a href="" target="_blank">
-        <div class="img">
-          <img src="/assets/bg.png" alt="">
-        </div>
-        <div class="info">
-          <p class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio veniam cumque ea pariatur sunt id rerum omnis voluptatum ab.</p>
-          <p class="channel-title">YouTube &rsaquo; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, ipsam.</p>
-          <p class="date">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="container">
-      <a href="" target="_blank">
-        <div class="img">
-          <img src="/assets/bg.png" alt="">
-        </div>
-        <div class="info">
-          <p class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio veniam cumque ea pariatur sunt id rerum omnis voluptatum ab.</p>
-          <p class="channel-title">YouTube &rsaquo; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, ipsam.</p>
-          <p class="date">Lorem ipsum dolor sit amet.</p>
+          <p class="title" style="width: 100%; height: 15px; background-color: #e8e8e8; border-radius: 3px;"></p>
+          <p class="channel-title" style="width: 70%; height: 15px; background-color: #e8e8e8; border-radius: 3px;"></p>
+          <p class="date"  style="width: 45%; height: 15px; background-color: #e8e8e8; border-radius: 3px;"></p>
         </div>
       </a>
     </div>

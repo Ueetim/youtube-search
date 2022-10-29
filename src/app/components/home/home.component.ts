@@ -15,13 +15,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   private routeSub!: Subscription;
   private videoSub!: Subscription;
 
-  // public preloaderCount: number[] = [];
+  public preloaderCount: number[] = [];
 
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
+    for (let i = 0; i < 50; i++) {
+      this.preloaderCount.push(i);
+    }
   }
 
   ngOnInit(): void {
