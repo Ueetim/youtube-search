@@ -2,7 +2,7 @@
   <app-search (dataEvent)="getChildData($event)" bgColor="#fff"></app-search>
 
   <div class="main-con" *ngIf="videos">
-    <div class="container" *ngFor="let video of videos">
+    <div class="container vid-con" *ngFor="let video of videos">
       <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
         <div class="img">
           <img src="{{video.snippet.thumbnails.medium.url}}" alt="">
@@ -18,7 +18,7 @@
 
   <div class="main-con" *ngIf="!videos">
     <div class="container" *ngFor="let item of preloaderCount">
-      <a href="" target="_blank">
+      <!-- <a> -->
         <div class="img" style="background-color: #e8e8e8;">
           <!-- <img src="/assets/bg.png" alt=""> -->
         </div>
@@ -27,7 +27,7 @@
           <p class="channel-title" style="width: 70%; height: 15px; background-color: #e8e8e8; border-radius: 3px;"></p>
           <p class="date"  style="width: 45%; height: 15px; background-color: #e8e8e8; border-radius: 3px;"></p>
         </div>
-      </a>
+      <!-- </a> -->
     </div>
   </div>
 

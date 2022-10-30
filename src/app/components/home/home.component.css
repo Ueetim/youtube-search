@@ -22,7 +22,7 @@ main {
   transition: .2s;
 }
 
-.container:hover {
+.vid-con:hover {
   transform: translateY(-3px);
   box-shadow: 2px 3px 10px #0000003b;
   transition: .2s;
