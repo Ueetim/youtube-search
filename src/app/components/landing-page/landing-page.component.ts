@@ -6,11 +6,12 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  visible: boolean = false;
+  visible: any = sessionStorage.getItem('visible') || false;
 
   constructor() {
     window.onload = () => {
       this.visible = true;
+      sessionStorage.setItem('visible', 'true');
     }
 
   }
