@@ -1,7 +1,9 @@
 <div class="container" *ngIf="visible">
   <video class="video-con" autoplay [muted]="'muted'">
-    <source src="/assets/nature.mp4" muted>
+    <source src="/assets/nature.mp4">
   </video>
+
+  <div class="overlay"></div>
 
   <app-search></app-search>
 </div>
